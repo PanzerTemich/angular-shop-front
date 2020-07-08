@@ -1,0 +1,16 @@
+<!-- <p>register works!</p> -->
+<!-- <form> -->
+    <div class="container">
+        <p *ngIf='error'>{{error}}</p>
+        <p>Nombre:</p>
+        <input type="text" name="name" placeholder="Nombre" required [(ngModel)]='name'>
+        <p>Apellido:</p>
+        <input type="text" name="lastname" placeholder="Apellido" required [(ngModel)]='lastname'>
+        <p>Email:</p>
+        <input type="email" name="email" placeholder="Email" required [(ngModel)]='email'>
+        <p>Contraseña:</p>
+        <input type="password" name="password" placeholder="Contraseña" [(ngModel)]='password'>
+        <hr>
+        <button (click)='send()'>Registrarse</button>
+    </div>
+<!-- </form> -->

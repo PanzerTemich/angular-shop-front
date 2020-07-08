@@ -1,0 +1,58 @@
+<ng-container *ngIf="datos;else out">
+    <app-navbar></app-navbar>
+    <div>
+        <p>Nombre de quien recibe: {{receiver}}</p>
+        <p>Calle Principal: {{mainstreet}}</p>
+        <p>Número: {{number}}</p>
+        <p>Segunda Calle: {{secondstreet}}</p>
+        <p>Tercera Calle: {{thirdstreet}}</p>
+        <p>ZIP: {{zip}}</p>
+        <p>Ciudad: {{city}}</p>
+        <p>Estado: {{state}}</p>
+        <div>
+            <button (click)='update()'>
+                Actualizar Datos
+            </button>
+        </div>
+        <tr *ngFor='let product of products'>
+            <td>{{product.stock}}</td>
+            <td>{{product.name}}</td>
+            <td>${{product.price}}</td>
+            <td>${{(product.stock)*(product.price)}}</td>
+        </tr>
+        <tr *ngIf='total'>
+            <td>TOTAL</td>
+            <td></td>
+            <td></td>
+            <td>${{total}}</td>
+        </tr>
+        <ngx-paypal [config]="payPalConfig"></ngx-paypal>
+    </div>
+</ng-container>
+
+<ng-template #out>
+<app-navbar></app-navbar>
+    <div>
+        <p>Nombre de quien recibe:</p>
+        <input type="text" name='receiver' [(ngModel)]='receiver'>
+        <p>Calle principal:</p>
+        <input type="text" name='mainstreet' [(ngModel)]='mainstreet'>
+        <p>Numero:</p>
+        <input type="number" name='number' [(ngModel)]='number'>
+        <p>Segunda calle:</p>
+        <input type="text" name='secondstreet' [(ngModel)]='secondstreet'>
+        <p>Tercera calle:</p>
+        <input type="text" name='thirdstreet' [(ngModel)]='thirdstreet'>
+        <p>ZIP</p>
+        <input type="text" name='zip' [(ngModel)]='zip'>
+        <p>Ciudad</p>
+        <input type="text" name='city' [(ngModel)]='city'>
+        <p>Estado</p>
+        <input type="text" name='state' [(ngModel)]='state'>
+        <div>
+            <button (click)='send()'>
+                Actualizar Datos
+            </button>
+        </div>
+    </div>
+</ng-template>

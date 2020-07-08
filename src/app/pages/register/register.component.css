@@ -1,0 +1,23 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*content-box*/
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: brown;
+    width:100%;
+}
+/* input{
+    width:50%;
+} */
+.container{
+    width: 50%;
+}
+.submit{
+    display: flex;
+    justify-content: center;
+}

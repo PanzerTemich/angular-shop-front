@@ -1,0 +1,9 @@
+<div class="container">
+    <p *ngIf='error'>{{error}}</p>
+    <p>Email:</p>
+    <input type="email" name="email" placeholder="Email" required [(ngModel)]='email'>
+    <p>Contraseña:</p>
+    <input type="password" name="password" placeholder="Contraseña" [(ngModel)]='password'>
+    <hr>
+    <button (click)='send()'>Ingresar</button>
+</div>

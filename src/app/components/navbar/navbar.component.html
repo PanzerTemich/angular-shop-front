@@ -1,0 +1,24 @@
+<style>
+    .nav{
+        background-color: orange;
+        box-sizing: content-box;
+        padding: 0;
+        margin: 0;
+    }
+</style>
+<ng-container *ngIf="logged;else out">
+    <nav class="nav">
+        <p>Bienvenido</p>
+        <button (click)="payment()" *ngIf='cart&&pathname'>Pagar</button>
+        <button (click)="logout()">Salir</button>
+        <p>Artículos: {{cart}}</p>
+        <!-- <p></p> -->
+    </nav>
+</ng-container>
+
+<ng-template #out>
+    <nav class="nav">
+        <button (click)="login()">Entrar</button>
+        <button (click)="signup()">Registrarse</button>
+    </nav>
+</ng-template>
